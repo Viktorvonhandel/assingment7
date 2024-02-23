@@ -94,9 +94,10 @@ public class App {
                     Course courseForGrade = coursesForGrading.get(courseIndexForGrade);
 
                    
-                    ArrayList<Student> studentsForGrading = sisu.getStudents();
-                    for (int i = 0; i < studentsForGrading.size(); i++) {
-                        Student student = studentsForGrading.get(i);
+                    ArrayList<Enrollment> enrolledStudents = sisu.getEnrollments(courseForGrade);
+                    for (int i = 0; i < enrolledStudents.size(); i++) {
+                        Enrollment enrollment = enrolledStudents.get(i);
+                        Student student = enrollment.getStudent();
                         System.out.println("Anna arvosana opiskelijalle " + student.getId() + " " + student.getName());
                     }
 
@@ -145,7 +146,7 @@ public class App {
                     Student selectedStudent = studentsToGradeList.get(studentsToGradeIndex);
 
                     ArrayList<Enrollment> studentEnrollments = sisu.getEnrollments(selectedStudent); 
-                    System.out.println("Opiskelijan " + selectedStudent.getId() + " " + selectedStudent.getName() + " suoritukset:");
+                    System.out.println("Opiskelijan " + selectedStudent.getId() + " " + selectedStudent.getName() + " arvosanat:");
                     
                     for (int i = 0; i < studentEnrollments.size(); i++) { 
                         Enrollment enrollment = studentEnrollments.get(i); 
