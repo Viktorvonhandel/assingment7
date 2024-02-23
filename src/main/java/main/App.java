@@ -53,8 +53,10 @@ public class App {
                 case 4:
                     // Listaa opiskelijat
                     ArrayList<Student> students = sisu.getStudents();
-                    for (Student student : students) {
-                        System.out.println(student.getName() + " (" + student.getId() + ")");
+                    for (int i = 0; i < students.size(); i++) {
+                        Student student = students.get(i);
+                        System.out.println(i + ") " +student.getName() +"("+ student.getId() +")");
+                       
                     }
                     break;
                 case 5:
