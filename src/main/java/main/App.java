@@ -55,16 +55,27 @@ public class App {
                     ArrayList<Student> students = sisu.getStudents();
                     for (int i = 0; i < students.size(); i++) {
                         Student student = students.get(i);
-                        System.out.println(i + ") " +student.getId() + student.getName());
+                        System.out.println(i + ") " +student.getId() +""+ student.getName());
                        
                     }
                     break;
                 case 5:
                     scanner.nextLine();
-                    System.out.println("Anna opiskelijan opiskelijanumero:");
-                    String studentIdToAdd = scanner.nextLine();
-                    System.out.println("Anna kurssin koodi:");
+                    ArrayList<Course> coursesToAdd = sisu.getCourses();
+                    for (int i = 0; i < coursesToAdd.size(); i++) {
+                        Course course = coursesToAdd.get(i);
+                        System.out.println(i + ") " + course.getCode() + " " + course.getName());
+                    }
+                    System.out.println("Mille kurssille haluat lisätä opiskelijan? Syötä kurssin numero:");
                     String courseCodeToAdd = scanner.nextLine();
+                    ArrayList<Student> studentsToAdd = sisu.getStudents();
+                    for (int i = 0; i < studentsToAdd.size(); i++) {
+                        Student student = studentsToAdd.get(i);
+                        System.out.println(i + ") " +student.getId() +""+ student.getName());
+                    }
+                    System.out.println("Minkä opiskelijan haluat lisätä kurssille? Syötä opiskelijan numero:");
+                    String studentIdToAdd = scanner.nextLine();
+                   
                     sisu.enrollStudent(sisu.getStudent(studentIdToAdd), sisu.getCourse(courseCodeToAdd));
                     break;
                 case 6:
