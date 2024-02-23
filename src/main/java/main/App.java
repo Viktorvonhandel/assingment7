@@ -59,7 +59,7 @@ public class App {
                        
                     }
                     break;
-                case 5:
+                    case 5:
                     scanner.nextLine();
                     ArrayList<Course> coursesToAdd = sisu.getCourses();
                     for (int i = 0; i < coursesToAdd.size(); i++) {
@@ -67,19 +67,22 @@ public class App {
                         System.out.println(i + ") " + course.getCode() + " " + course.getName());
                     }
                     System.out.println("Mille kurssille haluat lisätä opiskelijan? Syötä kurssin numero:");
-                    String courseCodeToAdd = scanner.nextLine();
+                    int courseIndexToAdd = scanner.nextInt();
+                    Course selectedCourseToAdd = coursesToAdd.get(courseIndexToAdd);
+                    
                     ArrayList<Student> studentsToAdd = sisu.getStudents();
                     for (int i = 0; i < studentsToAdd.size(); i++) {
                         Student student = studentsToAdd.get(i);
-                        System.out.println(i + ") " +student.getId() +""+ student.getName());
+                        System.out.println(i + ") " + student.getId() + " " + student.getName());
                     }
                     System.out.println("Minkä opiskelijan haluat lisätä kurssille? Syötä opiskelijan numero:");
-                    String studentIdToAdd = scanner.nextLine();
-                   
-                    sisu.enrollStudent(sisu.getStudent(studentIdToAdd), sisu.getCourse(courseCodeToAdd));
+                    int studentIndexToAdd = scanner.nextInt();
+                    Student selectedStudentToAdd = studentsToAdd.get(studentIndexToAdd);
+                    
+                    sisu.enrollStudent(selectedStudentToAdd, selectedCourseToAdd);
                     break;
                 case 6:
-                   
+                    // Tulostetaan kurssilista
                     ArrayList<Course> coursesForGrading = sisu.getCourses();
                     for (int i = 0; i < coursesForGrading.size(); i++) {
                         Course course = coursesForGrading.get(i);
@@ -87,37 +90,49 @@ public class App {
                     }
                     System.out.println("Minkä kurssin haluat arvostella? Syötä kurssin numero:");
                     int courseIndexForGrade = scanner.nextInt();
-                    scanner.nextLine(); 
-                
-                   
+                    scanner.nextLine();
                     Course courseForGrade = coursesForGrading.get(courseIndexForGrade);
-                    
-                    
-                    for (Student student : sisu.getStudents()) {
-                        System.out.println("Anna arvosana opiskelijalle " + student.getId() + " " + student.getName());
-                        int gradeForStudent = scanner.nextInt();
-                        scanner.nextLine(); 
-                        sisu.gradeCourse(student, courseForGrade, gradeForStudent);
+
+                    // Tulostetaan opiskelijalista
+                    ArrayList<Student> studentsForGrading = sisu.getStudents();
+                    for (int i = 0; i < studentsForGrading.size(); i++) {
+                        Student student = studentsForGrading.get(i);
+                        System.out.println(i + ") " + student.getId() + " " + student.getName());
                     }
-                    break;
+
+                    // Pyydetään arvosanoja jokaiselta opiskelijalta
+                    for (int i = 0; i < studentsForGrading.size(); i++) {
+                        Student student = studentsForGrading.get(i);
+                        System.out.println("Anna arvosana opiskelijalle " + student.getId() + " " + student.getName() + ":");
+                        int grade = scanner.nextInt();
+                        scanner.nextLine();
+                        sisu.gradeCourse(student, courseForGrade, grade);
+                    }
+
+                
                 case 7:
-                    scanner.nextLine();
-                    System.out.println("Anna kurssin koodi:");
-                    String courseCodeToDisplayStudents = scanner.nextLine();
-                    ArrayList<Student> enrolledStudents = sisu.getStudents();
-                    for (Student student : enrolledStudents) {
-                        System.out.println(student.getName() + " (" + student.getId() + ")");
-                    }
-                    break;
+                //     scanner.nextLine();
+                //     System.out.println("Anna kurssin koodi:");
+                //     String courseCodeToDisplayStudents = scanner.nextLine();
+                //     Course selectedCourseToDisplayStudents = sisu.getCourse(courseCodeToDisplayStudents);
+                //     if (selectedCourseToDisplayStudents != null) {
+                //         ArrayList<Student> enrolledStudents = sisu.getEnrolledStudents(selectedCourseToDisplayStudents);
+                //         for (Student student : enrolledStudents) {
+                //             System.out.println(student.getName() + " (" + student.getId() + ")");
+                //         }
+                // } else {
+                //     System.out.println("Virhe: Kurssia ei löytynyt.");
+                // }
+                //     break;
                 case 8:
-                    scanner.nextLine();
-                    System.out.println("Anna opiskelijan opiskelijanumero:");
-                    String studentIdForGrades = scanner.nextLine();
-                    ArrayList<Enrollment> studentGrades = sisu.getEnrollments(sisu.getStudent(studentIdForGrades));
-                    for (Enrollment enrollment : studentGrades) {
-                        System.out.println("Kurssi: " + enrollment.getCourse().getName() + ", Arvosana: " + enrollment.getGrade());
-                    }
-                    break;
+                    // scanner.nextLine();
+                    // System.out.println("Anna opiskelijan opiskelijanumero:");
+                    // String studentIdForGrades = scanner.nextLine();
+                    // ArrayList<Enrollment> studentGrades = sisu.getEnrollments(sisu.getStudent(studentIdForGrades));
+                    // for (Enrollment enrollment : studentGrades) {
+                    //     System.out.println("Kurssi: " + enrollment.getCourse().getName() + ", Arvosana: " + enrollment.getGrade());
+                    // }
+                    // break;
                 case 9:
                     
                     ArrayList<Enrollment> allGrades = sisu.getAllGrades();

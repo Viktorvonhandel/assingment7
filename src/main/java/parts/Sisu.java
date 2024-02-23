@@ -22,14 +22,14 @@ public class Sisu {
         courses.add(course);
     }
 
-    public Course getCourse(String courseCode) {
-        for (Course course : courses) {
-            if (course.getCode().equals(courseCode)) {
-                return course;
-            }
+    public Course getCourse(int index) {
+        if (index >= 0 && index < courses.size()) {
+            return courses.get(index);
+        } else {
+            return null;
         }
-        return null;
     }
+
 
     public ArrayList<Course> getCourses() {
         return courses;
@@ -45,13 +45,12 @@ public class Sisu {
         students.add(student);
     }
 
-    public Student getStudent(String id) {
-        for (Student student : students) {
-            if (student.getId().equals(id)) {
-                return student;
-            }
+    public Student getStudent(int index) {
+        if (index >= 0 && index < students.size()) {
+            return students.get(index);
+        } else {
+            return null;
         }
-        return null;
     }
 
     public ArrayList<Student> getStudents() {
