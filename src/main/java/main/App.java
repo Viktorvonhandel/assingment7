@@ -98,14 +98,13 @@ public class App {
                     for (int i = 0; i < enrolledStudents.size(); i++) {
                         Enrollment enrollment = enrolledStudents.get(i);
                         Student student = enrollment.getStudent();
+                        
+                   
                         System.out.println("Anna arvosana opiskelijalle " + student.getId() + " " + student.getName());
-                    }
-
-                    
-                    for (int i = 0; i < studentsForGrading.size(); i++) {
-                        Student student = studentsForGrading.get(i);
                         int grade = scanner.nextInt();
                         scanner.nextLine();
+                        
+                       
                         sisu.gradeCourse(student, courseForGrade, grade);
                     }
                     break;
@@ -125,9 +124,9 @@ public class App {
                     Course selectedCourse = coursesForListing.get(courseIndexStudentlist);
                     
                     
-                    ArrayList<Enrollment> enrolledStudents = sisu.getEnrollments(selectedCourse);
-                    for (int i = 0; i < enrolledStudents.size(); i++) {
-                        Enrollment enrollment = enrolledStudents.get(i);
+                    ArrayList<Enrollment> enrolledStudents1 = sisu.getEnrollments(selectedCourse);
+                    for (int i = 0; i < enrolledStudents1.size(); i++) {
+                        Enrollment enrollment = enrolledStudents1.get(i);
                         Student student = enrollment.getStudent();
                         int grade = enrollment.getGrade(); 
                         System.out.println(i + ") " + student.getId() + " " + student.getName() + ", arvosana: " + grade);
