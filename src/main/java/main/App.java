@@ -55,7 +55,7 @@ public class App {
                     ArrayList<Student> students = sisu.getStudents();
                     for (int i = 0; i < students.size(); i++) {
                         Student student = students.get(i);
-                        System.out.println(i + ") " +student.getName() +"("+ student.getId() +")");
+                        System.out.println(i + ") " +student.getId() + student.getName());
                        
                     }
                     break;
