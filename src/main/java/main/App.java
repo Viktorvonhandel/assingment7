@@ -32,6 +32,7 @@ public class App {
                     System.out.println("Anna kurssin maksimi opiskelijamäärä:");
                     int coursemaxNumberOfStudents = scanner.nextInt();
                     sisu.addCourse(new Course(courseName, courseCode, coursemaxNumberOfStudents));
+                    scanner.nextLine();
                     break;
                 case 2:
                     // Luo uusi opiskelija
@@ -47,6 +48,7 @@ public class App {
                     for (Course course : courses) {
                         System.out.println(course.getCode()+" "+ course.getName());
                     }
+                    scanner.nextLine();
                     break;
                 case 4:
                     // Listaa opiskelijat
@@ -101,7 +103,6 @@ public class App {
                     break;
                 case 0:
                     System.out.println("Kiitos ohjelman käytöstä.");
-                    scanner.nextLine(); // Tyhjentää puskurin
                     break;
                 default:
                     System.out.println("Virheellinen valinta.");
