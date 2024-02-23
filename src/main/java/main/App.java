@@ -14,17 +14,17 @@ public class App {
         System.out.println("Tervetuloa Gifu-järjestelmään.\nMille yliopistolle haluat ottaa järjestelmän käyttöön?");
         String university = scanner.nextLine();
         sisu.addUniversity(university);
-        scanner.nextLine();
+        
 
         int choice;
         do {
             
             System.out.println("1) Luo uusi kurssi, 2) Luo uusi opiskelija, 3) Listaa kurssit, 4) Listaa opiskelijat, 5) Lisää opiskelija kurssille, 6) Anna kurssiarvosanat, 7) Listaa kurssilla olevat opiskelijat, 8) Listaa opiskelijan arvosanat, 9) Listaa kaikkien kurssien kaikkien opiskelijoiden arvosanat, 0) Lopeta ohjelma");
             choice = scanner.nextInt();
-            scanner.nextLine(); // Tyhjentää puskurin
+          
             switch (choice) {
                 case 1:
-                    // Luo uusi kurssi
+                    scanner.nextLine(); // Tyhjentää puskurin
                     System.out.println("Anna kurssin nimi:");
                     String courseName = scanner.nextLine();
                     System.out.println("Anna kurssin ID:");
@@ -32,7 +32,7 @@ public class App {
                     System.out.println("Anna kurssin maksimi opiskelijamäärä:");
                     int coursemaxNumberOfStudents = scanner.nextInt();
                     sisu.addCourse(new Course(courseName, courseCode, coursemaxNumberOfStudents));
-                    
+                    scanner.nextLine(); 
                     break;
                 case 2:
                     // Luo uusi opiskelija
