@@ -45,7 +45,7 @@ public class App {
                     // Listaa kurssit
                     ArrayList<Course> courses = sisu.getCourses();
                     for (Course course : courses) {
-                        System.out.println(course.getCode() + course.getName());
+                        System.out.println(course.getCode()+" "+ course.getName());
                     }
                     break;
                 case 4:
