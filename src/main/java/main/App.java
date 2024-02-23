@@ -167,7 +167,7 @@ public class App {
                 
                
                 for (Course course : allCourses) {
-                    System.out.println(course.getName());
+                    System.out.println(course.getCode() + course.getName());
                     while (index < allGrades.size()) {
                         Enrollment enrollment = allGrades.get(index);
                         if (enrollment.getCourse().equals(course)) {
