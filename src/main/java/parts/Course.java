@@ -3,11 +3,11 @@ package parts;
 public class Course {
     private int maxNumberOfStudents;
     private String name;
-    private String code; // Lisätty kurssikoodi
+    private String code;
 
-    public Course(String name, String code, int maxNumberOfStudents) { // Lisätty kurssikoodi
+    public Course(String name, String code, int maxNumberOfStudents) { 
         this.name = name;
-        this.code = code; // Lisätty kurssikoodi
+        this.code = code; 
         this.maxNumberOfStudents = maxNumberOfStudents;
     }
 
@@ -19,13 +19,13 @@ public class Course {
         return name;
     }
 
-    public String getCode() { // Lisätty kurssikoodi
-        return code; // Lisätty kurssikoodi
+    public String getCode() { 
+        return code; 
     }
 
 
     @Override
     public String toString() {
-        return "Course: " + name + ", Code: " + code; // Muutettu tulostusformaatti
+        return "Course: " + name + ", Code: " + code;
     }
 }
