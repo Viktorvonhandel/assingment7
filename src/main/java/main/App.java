@@ -82,7 +82,7 @@ public class App {
                     sisu.enrollStudent(selectedStudentToAdd, selectedCourseToAdd);
                     break;
                 case 6:
-                    // Tulostetaan kurssilista
+                    
                     ArrayList<Course> coursesForGrading = sisu.getCourses();
                     for (int i = 0; i < coursesForGrading.size(); i++) {
                         Course course = coursesForGrading.get(i);
@@ -93,14 +93,14 @@ public class App {
                     scanner.nextLine();
                     Course courseForGrade = coursesForGrading.get(courseIndexForGrade);
 
-                    // Tulostetaan opiskelijalista
+                   
                     ArrayList<Student> studentsForGrading = sisu.getStudents();
                     for (int i = 0; i < studentsForGrading.size(); i++) {
                         Student student = studentsForGrading.get(i);
-                        System.out.println(i + ") " + student.getId() + " " + student.getName());
+                        System.out.println("Anna arvosana opiskelijalle" + student.getId() + " " + student.getName());
                     }
 
-                    // Pyydetään arvosanoja jokaiselta opiskelijalta
+                    
                     for (int i = 0; i < studentsForGrading.size(); i++) {
                         Student student = studentsForGrading.get(i);
                         System.out.println("Anna arvosana opiskelijalle " + student.getId() + " " + student.getName() + ":");
@@ -108,7 +108,7 @@ public class App {
                         scanner.nextLine();
                         sisu.gradeCourse(student, courseForGrade, grade);
                     }
-
+                    break;
                 
                 case 7:
                 //     scanner.nextLine();
