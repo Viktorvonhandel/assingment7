@@ -160,11 +160,26 @@ public class App {
                     break;
                 case 9:
                     
-                    ArrayList<Enrollment> allGrades = sisu.getAllGrades();
-                    for (Enrollment enrollment : allGrades) {
-                        System.out.println(enrollment.getCourse().getName()+"/n" + enrollment.getStudent().getId() + enrollment.getStudent().getName()+ ", Arvosana: " + enrollment.getGrade());
+                ArrayList<Enrollment> allGrades = sisu.getAllGrades();
+                ArrayList<Course> allCourses = sisu.getCourses();
+                
+                int index = 0;
+                
+               
+                for (Course course : allCourses) {
+                    System.out.println("Kurssi: " + course.getName());
+                    while (index < allGrades.size()) {
+                        Enrollment enrollment = allGrades.get(index);
+                        if (enrollment.getCourse().equals(course)) {
+                            System.out.println(enrollment.getStudent().getId() + " " + enrollment.getStudent().getName() + ", Arvosana: " + enrollment.getGrade());
+                        } else {
+                            break;
+                        }
+                        index++;
                     }
-                    break;
+                }
+                
+                break;
                 case 0:
                     System.out.println("Kiitos ohjelman käytöstä.");
                     break;
