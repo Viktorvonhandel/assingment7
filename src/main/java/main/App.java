@@ -97,7 +97,7 @@ public class App {
                     ArrayList<Student> studentsForGrading = sisu.getStudents();
                     for (int i = 0; i < studentsForGrading.size(); i++) {
                         Student student = studentsForGrading.get(i);
-                        System.out.println("Anna arvosana opiskelijalle" + student.getId() + " " + student.getName());
+                        System.out.println("Anna arvosana opiskelijalle " + student.getId() + " " + student.getName());
                     }
 
                     
