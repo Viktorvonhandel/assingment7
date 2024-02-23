@@ -27,9 +27,11 @@ public class App {
                     // Luo uusi kurssi
                     System.out.println("Anna kurssin nimi:");
                     String courseName = scanner.nextLine();
-                    System.out.println("Anna kurssin koodi:");
+                    System.out.println("Anna kurssin ID:");
                     String courseCode = scanner.nextLine();
-                    sisu.addCourse(new Course(courseName, courseCode, 30)); // 30 on enimmäisopiskelijoiden määrä
+                    System.out.println("Anna kurssin maksimi opiskelijamäärä:");
+                    int coursemaxNumberOfStudents = scanner.nextInt();
+                    sisu.addCourse(new Course(courseName, courseCode, coursemaxNumberOfStudents));
                     break;
                 case 2:
                     // Luo uusi opiskelija

@@ -23,6 +23,7 @@ public class Course {
         return code; // Lisätty kurssikoodi
     }
 
+
     @Override
     public String toString() {
         return "Course: " + name + ", Code: " + code; // Muutettu tulostusformaatti
