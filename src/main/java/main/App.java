@@ -35,7 +35,7 @@ public class App {
                     scanner.nextLine(); 
                     break;
                 case 2:
-                    // Luo uusi opiskelija
+                    scanner.nextLine();
                     System.out.println("Anna opiskelijan nimi:");
                     String studentName = scanner.nextLine();
                     System.out.println("Anna opiskelijan opiskelijanumero:");
@@ -58,7 +58,7 @@ public class App {
                     }
                     break;
                 case 5:
-                    // Lisää opiskelija kurssille
+                    scanner.nextLine();
                     System.out.println("Anna opiskelijan opiskelijanumero:");
                     String studentIdToAdd = scanner.nextLine();
                     System.out.println("Anna kurssin koodi:");
@@ -66,7 +66,7 @@ public class App {
                     sisu.enrollStudent(sisu.getStudent(studentIdToAdd), sisu.getCourse(courseCodeToAdd));
                     break;
                 case 6:
-                    // Anna kurssiarvosanat
+                    scanner.nextLine();
                     System.out.println("Anna opiskelijan opiskelijanumero:");
                     String studentIdForGrade = scanner.nextLine();
                     System.out.println("Anna kurssin koodi:");
@@ -77,7 +77,7 @@ public class App {
                     sisu.gradeCourse(sisu.getStudent(studentIdForGrade), sisu.getCourse(courseCodeForGrade), grade);
                     break;
                 case 7:
-                    // Listaa kurssilla olevat opiskelijat
+                    scanner.nextLine();
                     System.out.println("Anna kurssin koodi:");
                     String courseCodeToDisplayStudents = scanner.nextLine();
                     ArrayList<Student> enrolledStudents = sisu.getStudents();
@@ -86,7 +86,7 @@ public class App {
                     }
                     break;
                 case 8:
-                    // Listaa opiskelijan arvosanat
+                    scanner.nextLine();
                     System.out.println("Anna opiskelijan opiskelijanumero:");
                     String studentIdForGrades = scanner.nextLine();
                     ArrayList<Enrollment> studentGrades = sisu.getEnrollments(sisu.getStudent(studentIdForGrades));
