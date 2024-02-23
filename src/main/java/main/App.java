@@ -100,8 +100,8 @@ public class App {
                     }
                     break;
                 case 0:
-                    scanner.nextLine();
                     System.out.println("Kiitos ohjelman käytöstä.");
+                    scanner.nextLine(); // Tyhjentää puskurin
                     break;
                 default:
                     System.out.println("Virheellinen valinta.");
