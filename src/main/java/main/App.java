@@ -100,14 +100,14 @@ public class App {
                     }
                     break;
                 case 0:
-                    scanner.close();
+                    scanner.nextLine();
                     System.out.println("Kiitos ohjelman käytöstä.");
                     break;
                 default:
                     System.out.println("Virheellinen valinta.");
             }
         } while (choice != 0);
-        
+        scanner.close();
     }
 }
 
