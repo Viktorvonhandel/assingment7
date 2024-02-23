@@ -11,7 +11,7 @@ public class App {
     public static void main(String[] args) {
         Sisu sisu = new Sisu("");
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Tervetuloa Gifu-järjestelmään.\nMille yliopistolle haluat ottaa järjestelmän käyttöön?");
+        System.out.println("Tervetuloa Gifu-järjestelmään\nMille yliopistolle haluat ottaa järjestelmän käyttöön?");
         String university = scanner.nextLine();
         sisu.addUniversity(university);
         
@@ -43,12 +43,12 @@ public class App {
                     sisu.addStudent(new Student(studentName, studentId));
                     break;
                 case 3:
-                    // Listaa kurssit
+                    // Listaa kurssit ja niiden indexinumerot
                     ArrayList<Course> courses = sisu.getCourses();
-                    for (Course course : courses) {
-                        System.out.println(course.getCode()+" "+ course.getName());
+                    for (int i = 0; i < courses.size(); i++) {
+                        Course course = courses.get(i);
+                        System.out.println(i + ") " + course.getCode() + " " + course.getName());
                     }
-                    
                     break;
                 case 4:
                     // Listaa opiskelijat
