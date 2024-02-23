@@ -103,7 +103,6 @@ public class App {
                     
                     for (int i = 0; i < studentsForGrading.size(); i++) {
                         Student student = studentsForGrading.get(i);
-                        System.out.println("Anna arvosana opiskelijalle " + student.getId() + " " + student.getName() + ":");
                         int grade = scanner.nextInt();
                         scanner.nextLine();
                         sisu.gradeCourse(student, courseForGrade, grade);
